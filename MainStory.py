@@ -1,6 +1,5 @@
 import random
 
-
 inventory = []
 options = []
 woonkamerCheck = False
@@ -10,6 +9,7 @@ ufoOpslagCheck = False
 bathroomCheck = False
 planetBussCheck = False
 alienKeyCheck = False
+doorOpenCheck = False
 location = "kamer Jack"
 antwoord = ""
 
@@ -79,7 +79,7 @@ def item_pickups(locatie, sleutel):
     return locatie, sleutel
 
 
-def locatie_checks(opties, plaats, pispotcheck):  # check welke locaties mogelijk en verbonden zijn aan andere locaties
+def locatie_checks(opties, plaats, pispotcheck, deurcheck):  # check welke locaties mogelijk en verbonden zijn aan andere locaties
     if plaats == "kamer Jack":
         opties = ["overloop"]
         if "hallway" in antwoord:
@@ -95,7 +95,7 @@ def locatie_checks(opties, plaats, pispotcheck):  # check welke locaties mogelij
                 pispotcheck = True
             elif pispotcheck:
                 print("You are REALLY nervous, aren't you? Either way, your bladder is empty.")
-        elif "living" in antwoord:
+        elif "living" in antwoord or "up" in antwoord:
             plaats = "woonkamer"
         elif "mom" in antwoord:
             plaats = "kamer mama"
@@ -107,9 +107,9 @@ def locatie_checks(opties, plaats, pispotcheck):  # check welke locaties mogelij
 
     elif plaats == "woonkamer":
         opties = ["kantoor", "WC", "keuken", "overloop"]
-        if "office" in antwoord:
+        if "office" in antwoord or "study" in antwoord:
             plaats = "kantoor"
-        if "toilet" in antwoord:
+        elif "toilet" in antwoord:
             if not pispotcheck:
                 print("That was a big relief, now to continue on your way to find your mommy.")
                 pispotcheck = True
@@ -117,7 +117,7 @@ def locatie_checks(opties, plaats, pispotcheck):  # check welke locaties mogelij
                 print("You are REALLY nervous, aren't you? Either way, your bladder is empty.")
         elif "kitchen" in antwoord:
             plaats = "keuken"
-        elif "hallway" in antwoord:
+        elif "hallway" in antwoord or "up" in antwoord:
             plaats = "overloop"
 
     elif plaats == "kantoor":
@@ -136,9 +136,12 @@ def locatie_checks(opties, plaats, pispotcheck):  # check welke locaties mogelij
         elif "fridge" in antwoord:
             plaats = "koelkast"
         elif "ard" in antwoord:  # yARD en gARDen zijn beide goede manieren om naar de achtertuin te komen
-            plaats = "achtertuin"
-            if "House key" in inventory:  # deze IF kan ook gebruikt worden om toegang af te wijzen
+            if "House key" in inventory:  # als we HouseKey hebben, mag je naar buiten
                 inventory.remove("House key")
+                deurcheck = True
+            elif "House key" not in inventory:  # als we HouseKey niet hebben, mag je niet naar buiten
+                if deurcheck:  # tenzij je de HouseKey al hebt gebruikt
+                    plaats = "achtertuin"
 
     elif plaats == "achtertuin":
         opties = ["speeltuin", "ufo buiten", "keuken"]
@@ -213,15 +216,15 @@ def locatie_checks(opties, plaats, pispotcheck):  # check welke locaties mogelij
         if "out" in antwoord:
             plaats = "alien huis buiten"
 
-    print(location)
-    return opties, plaats, pispotcheck
+    return opties, plaats, pispotcheck, deurcheck
 
 
 while True:
-    location = input("locatie: ")
+    # location = input("locatie: ")
     antwoord = standard_checks(input("\n  >>> "), location).lower()
     if "pick" in antwoord:
         location, alienKeyCheck = item_pickups(location, alienKeyCheck)
 
     if "go" in antwoord:
-        options, location, bathroomCheck = locatie_checks(options, location, bathroomCheck)
+        options, location, bathroomCheck, doorOpenCheck = locatie_checks(options, location, bathroomCheck, doorOpenCheck)
+    print(location)
