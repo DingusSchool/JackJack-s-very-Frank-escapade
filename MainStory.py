@@ -20,13 +20,13 @@ def standard_checks(answer, locatie):
     elif answer.lower() == "i" or answer.lower() == "inventory":  # print inventory als wordt gevraagd
         print("Your current inventory:")
         print("\n- ".join(inventory))
-    elif "swim" in answer.lower():  # als de speler iets met zwemmen invoert, komen er sarcastische antwoorrden terug
+    elif "swim" in answer.lower():  # als de speler iets met zwemmen invoert, komen er sarcastische antwoorden terug
         print("It doesn't seem like swimming would be useful on a solid surface.")
     elif "jump" in answer.lower():  # als de speler iets met springen invoert, komen er sarcastische antwoorden terug
         if locatie == "speeltuin":
             print("You jump off of the slide, your ankle hurts a bit.")
         else:
-            random_getal = random.randrange(1,4)
+            random_getal = random.randrange(1, 4)
             if random_getal == 1:
                 print("Wow, your feet are off the ground! :D")
             elif random_getal == 2:
@@ -36,13 +36,13 @@ def standard_checks(answer, locatie):
     elif "scream" in answer.lower():  # laat de speler lekker schreeuwen
         print("AAAAAAARRRRRRGGGGGHHHHHHH!!")
         if locatie == "alien huis binnen":
-            print("The alien gets jumpscared and starts crying. You monster.")
+            print("The alien gets jump-scared and starts crying. You monster.")
     elif "eat" in answer.lower():
         print("I can't seem to recognize that verb.")
     return answer
 
 
-def item_pickups(locatie):
+def item_pickups(locatie, sleutel):
     # hier staan alle statements voor de inventory checks, als de speler "Look" heeft gebruikt
     if locatie == "woonkamer" and woonkamerCheck:
         print("You have added the record of 'Roundabout - Yes' to your inventory.")
@@ -75,10 +75,11 @@ def item_pickups(locatie):
         print("This key looks identical to your own house key, and it is also under the doormat at the front door...")
         print("Jack-Jack: 'What is going on here?? How did this happen?'")
         inventory.append("Alien house key?")
-        alienKeyCheck = True
+        sleutel = True
+    return locatie, sleutel
 
 
-def locatie_checks(opties, plaats, pispotcheck):  # check welke locaties er mogelijk zijn en verbonden zijn aan andere locaties
+def locatie_checks(opties, plaats, pispotcheck):  # check welke locaties mogelijk en verbonden zijn aan andere locaties
     if plaats == "kamer Jack":
         opties = ["overloop"]
         if "hallway" in antwoord:
@@ -121,42 +122,96 @@ def locatie_checks(opties, plaats, pispotcheck):  # check welke locaties er moge
 
     elif plaats == "kantoor":
         opties = ["kantoor la 1", "kantoor la 2", "woonkamer"]
+        if "1" in antwoord:
+            print("You see something that you really don't like and instantly close the drawer back up.")
+        elif "2" in antwoord:
+            plaats = "kantoor la 2"
+        elif "living" in antwoord:
+            plaats = "woonkamer"
 
     elif plaats == "keuken":
         opties = ["woonkamer", "koelkast", "achtertuin"]
+        if "living" in antwoord:
+            plaats = "woonkamer"
+        elif "fridge" in antwoord:
+            plaats = "koelkast"
+        elif "ard" in antwoord:  # yARD en gARDen zijn beide goede manieren om naar de achtertuin te komen
+            plaats = "achtertuin"
+            if "House key" in inventory:  # deze IF kan ook gebruikt worden om toegang af te wijzen
+                inventory.remove("House key")
 
     elif plaats == "achtertuin":
         opties = ["speeltuin", "ufo buiten", "keuken"]
+        if "play" in antwoord:
+            plaats = "speeltuin"
+        elif "ufo" in antwoord:
+            plaats = "ufo buiten"
+        elif "kitchen" in antwoord:
+            plaats = "keuken"
 
     elif plaats == "speeltuin":
         opties = ["achtertuin"]
+        if "ard" in antwoord:
+            plaats = "achtertuin"
 
     elif plaats == "ufo buiten":
         opties = ["ufo cockpit", "achtertuin"]
+        if "inside" in antwoord or "ufo" in antwoord:
+            plaats = "ufo cockpit"
+        elif "ard" in antwoord:
+            plaats = "achtertuin"
 
     elif plaats == "ufo cockpit":
-        if not planetBussCheck:
+        if not planetBussCheck:  # als we op de planeet zijn, kan je niet meer naar de achtertuin, nu wel naar de krater
             opties = ["ufo opslag", "ufo slaapcabine", "achtertuin"]
+            if "storage" in antwoord:
+                plaats = "ufo opslag"
+            elif "cabin" in antwoord:
+                plaats = "ufo slaapcabine"
+            elif "out" in antwoord or "ard" in antwoord:
+                plaats = "achtertuin"
         elif planetBussCheck:
             opties = ["ufo opslag", "ufo slaapcabine", "krater"]
+            if "storage" in antwoord:
+                plaats = "ufo opslag"
+            elif "cabin" in antwoord:
+                plaats = "ufo slaapcabine"
+            elif "out" in antwoord:
+                plaats = "krater"
 
     elif plaats == "ufo opslag":
         opties = ["ufo cockpit"]
+        if "cock" in antwoord:
+            plaats = "ufo cockpit"
 
     elif plaats == "ufo slaapcabine":
         opties = ["ufo cockpit"]
+        if "cock" in antwoord:
+            plaats = "ufo cockpit"
 
     elif plaats == "krater":
         opties = ["alien huis buiten", "ufo cockpit"]
+        if "house" in antwoord:
+            plaats = "alien huis buiten"
+        elif "ufo" in antwoord or "cock" in antwoord:
+            plaats = "ufo cockpit"
 
     elif plaats == "alien huis buiten":
-        if not alienKeyCheck:
+        if not alienKeyCheck:  # als de alien-sleutel nog niet gepakt is, is de deurmat nog een optie
             opties = ["alien deurmat", "alien huis binnen"]
+            if "mat" in antwoord:
+                plaats = "alien deurmat"
+            elif "door" in antwoord or "in" in antwoord:
+                plaats = "alien huis binnen"
         elif alienKeyCheck:
             opties = ["alien huis binnen"]
+            if "door" in antwoord or "in" in antwoord:
+                plaats = "alien huis binnen"
 
     elif plaats == "alien huis binnen":
         opties = ["alien huis buiten"]
+        if "out" in antwoord:
+            plaats = "alien huis buiten"
 
     print(location)
     return opties, plaats, pispotcheck
@@ -164,9 +219,9 @@ def locatie_checks(opties, plaats, pispotcheck):  # check welke locaties er moge
 
 while True:
     location = input("locatie: ")
-    antwoord = standard_checks(input("\n  >>> "), location)
-    if "pick" in antwoord.lower():
-        item_pickups(location)
+    antwoord = standard_checks(input("\n  >>> "), location).lower()
+    if "pick" in antwoord:
+        location, alienKeyCheck = item_pickups(location, alienKeyCheck)
 
     if "go" in antwoord:
         options, location, bathroomCheck = locatie_checks(options, location, bathroomCheck)
