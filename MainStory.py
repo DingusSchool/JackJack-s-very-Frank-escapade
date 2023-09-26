@@ -1,0 +1,1 @@
+print("JackJack wakes the fuck up")
