@@ -147,11 +147,24 @@ chapter 4.1
 ("you killed an innocent being, a creature that had no intent of defending themselves.")
 
 #if give lasergun
+("the figure transforms in your dad and points the gun towards you."}
+("Dad:'you were a mistake'")
+("YOU DIED")
 
+#if give snicker bar 
+("the figure transforms in your dad.")
+("Dad:'thanks son, I was not feeling like myself.'")
+("Jack-Jack:'You're not yourself when you're hungry')
 
-#if give granola bar 
+('END')
 
 #if give LP
+("the figure transforms in your dad.")
+("Dad:'my favorite LP you found it!')
+(*starts playing roundabout - YES*)
+
+('END')
+
 
 
 
