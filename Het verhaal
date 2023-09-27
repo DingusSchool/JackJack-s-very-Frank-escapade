@@ -2,105 +2,105 @@
 
 ("You (Jack-Jack) get woken up by a loud noise in the middle of the night")
 
-(“wow, that was super intense! What would that be?”)
-(“let’s look for mom.”)
-(“*grabs backpack*”)
-(“Jack-Jack: ‘Just in case’”)
+("wow, that was super intense! What would that be?")
+("let’s look for mom.")
+("*grabs backpack*")
+("Jack-Jack: ‘Just in case’")
 
 #chapter1.2
 (‘opens door’) 
-(“Jack-Jack: ‘mom?’ ”)
-(“.........”)
-(“Jack-Jack: ’Mom, are you there?’”)
-(“.........”)
-(“mom seems to be gone, I’m afraid you are on your own.”) 
+("Jack-Jack: ‘mom?’ ")
+(".........")
+("Jack-Jack: ’Mom, are you there?’")
+(".........")
+("mom seems to be gone, I’m afraid you are on your own.") 
 
 #chapter1.3
-(“you entered the hallway”)
-(“ on your right is the kitchen, and on your left  you can find the living room.”)
-(“Jack-Jack:’ we need to find a way to get outside’”)
-(“Jack-Jack: ’I remember that dad keeps the key under the doormat by the kitchen’”)
+("you entered the hallway")
+(" on your right is the kitchen, and on your left  you can find the living room.")
+("Jack-Jack:’ we need to find a way to get outside’")
+("Jack-Jack: ’I remember that dad keeps the key under the doormat by the kitchen’")
 
 #chapter1.4
-(“you’ve entered the kitchen”)
-(“on right is the fridge with your favourite snacks, on your left you see the backyard trough the window door”)
+("you’ve entered the kitchen")
+("on right is the fridge with your favourite snacks, on your left you see the backyard trough the window door")
 
 
 #when taking jacks favourite snack 
-(“Jack-Jack: ‘scrumdiddlyumptious’”)
-(“Jack-Jack: ‘the key doesn’t seem not to be here, let’s check my dads office.’)
+("Jack-Jack: ‘scrumdiddlyumptious’")
+("Jack-Jack: ‘the key doesn’t seem not to be here, let’s check my dads office.’)
 
 
 #Chapter 1.5
-(“you’ve entered the living room”)
-(“on your right see the T.V. and on your left is dads office”) 
-(“Jack-Jack:’ the new season of my favourite TV-show just aired.’”) 
+("you’ve entered the living room")
+("on your right see the T.V. and on your left is dads office") 
+("Jack-Jack:’ the new season of my favourite TV-show just aired.’") 
 
 #watched tv 
-(“Jack-Jack:’Oke that’s enough fun, let’s investigate further.’)
+("Jack-Jack:’Oke that’s enough fun, let’s investigate further.’)
 
 #Chapter1.6
-(“you entered your dad’s office”)
-(“In the back you see a elegant pinewood desk”)
-(“*opens drawer*”)
-(“Jack-Jack: ’oh gosh, I wish I’ve never seen that.”)
-(“in between documents  you see the key to the backdoor! “)
+("you entered your dad’s office")
+("In the back you see a elegant pinewood desk")
+("*opens drawer*")
+("Jack-Jack: ’oh gosh, I wish I’ve never seen that.")
+("in between documents  you see the key to the backdoor! ")
 
 #chapter 2
-(“*opens door too the backyard*”)
-(“*rustle* *rustle*”)
-(“Jack-Jack: ’what is that?’”)
-(“*rustle* *rustle*”)
-(“Jack-Jack: ‘help, I’m too young too die!’”)
-(“The morbidly obese cat of your neighbours appears out of the bushes.”)
-(“Jack-Jack: ’Pumkin-pie, you scared me! You stupid cat....’”)
-(“Jack-Jack: ‘Oke, enough distraction let’s continue this adventure.’”)
+("*opens door too the backyard*")
+("*rustle* *rustle*")
+("Jack-Jack: ’what is that?’")
+("*rustle* *rustle*")
+("Jack-Jack: ‘help, I’m too young too die!’")
+("The morbidly obese cat of your neighbours appears out of the bushes.")
+("Jack-Jack: ’Pumkin-pie, you scared me! You stupid cat....’")
+("Jack-Jack: ‘Oke, enough distraction let’s continue this adventure.’")
 
 (‘you entered the backyard’)
-(“we see the strange UFO in the distance and your favourite play equipment: ‘MightyMooseMansion  XXL’ on your left”)
+("we see the strange UFO in the distance and your favourite play equipment: ‘MightyMooseMansion  XXL’ on your left")
 
 (‘*tries to open door*’)
-(“Jack-Jack: ‘The door seems to be jammed, we need something to break it open.’”)
+("Jack-Jack: ‘The door seems to be jammed, we need something to break it open.’")
 
 Chapter 2.1
-(“Jack-Jack: ’Dad said: if I’m ever in a pickle I need to go the slide.’”) 
+("Jack-Jack: ’Dad said: if I’m ever in a pickle I need to go the slide.’") 
 #when entering slide
-(“Jack-Jack: ’Oh, would you look at that!’”)
-(“Jack-Jack: ‘this might come in handy’”)
+("Jack-Jack: ’Oh, would you look at that!’")
+("Jack-Jack: ‘this might come in handy’")
 
 Chapter 3
 (‘*BADOOM*’)
 (‘*PFFFFFFFSSSSTT*’) 
 (‘*door opens with some resistance*’)
-(“Jack-Jack: *cough* *cough*”)
-(“Jack-Jack: ‘there is a lot of smoke cumming out, I hope it is safe’”)
+("Jack-Jack: *cough* *cough*")
+("Jack-Jack: ‘there is a lot of smoke cumming out, I hope it is safe’")
 
 Chapter 3.1
-(“you have entered cockpit”)
+("you have entered cockpit")
 (‘we see two doors, the left door appears to lead to the storage and the right door to the sleeping cabin’)
-(“Jack-Jack:’ wauw this is nothing like your regular car!’”)
-(“Jack-Jack:’A lot of blinking lights and buttons I want to touch.’”)
-(“Jack-Jack:’but there seems to be missing something’”)
+("Jack-Jack:’ wauw this is nothing like your regular car!’")
+("Jack-Jack:’A lot of blinking lights and buttons I want to touch.’")
+("Jack-Jack:’but there seems to be missing something’")
 (‘you need to collect a key and battery to start-up the UFO’)
 
 chapter 3.2
 #when entering storage
-(“you have entered the storage-space”)
-(“It’s a dusty space with a lot of wiring, there is something shiny in the back that might be useful’)
-(“while opening the door a laser gun falls off the cabinet”)
-(“Jack-Jack: ’well we might need that in the near future’”) 
-(“Jack-Jack: ’Let’s look for that battery, shall we!’”) 
+("you have entered the storage-space")
+("It’s a dusty space with a lot of wiring, there is something shiny in the back that might be useful’)
+("while opening the door a laser gun falls off the cabinet")
+("Jack-Jack: ’well we might need that in the near future’") 
+("Jack-Jack: ’Let’s look for that battery, shall we!’") 
 #when battery found
-(“Jack-Jack:’I think there is nothing here anymore, let’s check the other rooms.’”)
+("Jack-Jack:’I think there is nothing here anymore, let’s check the other rooms.’")
 
 chapter 3.3
 #when entering sleep cabin 
-(“you have entered the sleeping cabin”)
-(“ there is a bunkbed with a nightstand”)
+("you have entered the sleeping cabin")
+(" there is a bunkbed with a nightstand")
 
 #when key found
 
-(“Jack-Jack:’I guess we’re done here! This space feels way too personal so let’s leave’”)
+("Jack-Jack:’I guess we’re done here! This space feels way too personal so let’s leave’")
 
 Chapter 3.4
 (*BLING BLONG* *BLING BLONG* *BLING BLONG*)
