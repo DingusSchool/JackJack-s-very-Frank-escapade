@@ -83,6 +83,7 @@ Chapter 3.1
 (“Jack-Jack:’but there seems to be missing something’”)
 (‘you need to collect a key and battery to start-up the UFO’)
 
+chapter 3.2
 #when entering storage
 (“you have entered the storage-space”)
 (“It’s a dusty space with a lot of wiring, there is something shiny in the back that might be useful’)
@@ -92,6 +93,7 @@ Chapter 3.1
 #when battery found
 (“Jack-Jack:’I think there is nothing here anymore, let’s check the other rooms.’”)
 
+chapter 3.3
 #when entering sleep cabin 
 (“you have entered the sleeping cabin”)
 (“ there is a bunkbed with a nightstand”)
@@ -100,7 +102,38 @@ Chapter 3.1
 
 (“Jack-Jack:’I guess we’re done here! This space feels way too personal so let’s leave’”)
 
-#if all 
+Chapter 3.4
+(*BLING BLONG* *BLING BLONG* *BLING BLONG*)
+("Jack-Jack:'all the lights are flickering'")
+("Jack-Jack:'I hope this is going to work out.'")
+(*PRzzRzRT PRzzRRTzTRzzRTT TRzPzPPPzzzTRzPzRRT*) 
+("Jack-Jack:'wow it's shaky!')
+("Jack-Jack:'It's coming off the ground!'")
+(*PRzzRzRT PRzzRRTzTRzzRTT TRzPzPPPzzzTRzPzRRT*) 
+("Jack-Jack:'It's actually flying!'")
+("Jack-Jack:'I can see my house become a small dot'")
+
+("The UFO is flying with the speed of light")
+("Jack Jack is seeing everything while going through space")
+("strange planets, extraterrestrial beings, floating rocks.")
+("after hours of traveling the UFO lands on a strange purple planet called: 'BUSS'")
+
+
+chapter 4
+(*PRzzRzRT PRzzRRTzTRzzRTT TRzPzPPPzzzTRzPzRRT*) 
+(*BBZZZZRRRRFFFFTTT*)
+# 2 sec wachten
+(*CLANK!*)
+('While the door of the UFO opens Jack-Jack peeks out to check if everything is safe')
+("Jack-Jack:'it's very quiet here')
+("Jack-Jack:'Lets look around'")
+("In the distance you see a house that looks very familiar")
+("Jack-Jack: 'is that my house?'")
+("A warm cozy light is oozing out of the windows, the smell of freshly baked coockies caresses Jack-Jacks nostrils.")
+("Jack-Jack:'would mom be there?'")
+
+chapter 4.1
+("you entered the  fimilair house
 
 
  
