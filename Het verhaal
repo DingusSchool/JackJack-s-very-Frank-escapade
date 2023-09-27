@@ -127,13 +127,33 @@ chapter 4
 ('While the door of the UFO opens Jack-Jack peeks out to check if everything is safe')
 ("Jack-Jack:'it's very quiet here')
 ("Jack-Jack:'Lets look around'")
-("In the distance you see a house that looks very familiar")
+("In the distance you see a house that looks very familiar.")
 ("Jack-Jack: 'is that my house?'")
-("A warm cozy light is oozing out of the windows, the smell of freshly baked coockies caresses Jack-Jacks nostrils.")
+("A warm cozy light is oozing out of the windows, the smell of his favorite dinner caresses Jack-Jacks nostrils.")
 ("Jack-Jack:'would mom be there?'")
 
 chapter 4.1
-("you entered the  fimilair house
+("you entered the  fimilair house")
+("the light of the TV is casting a big schadow on the wall of a female profile sitting on the couch")
+("while the woman turns her head you reconize it's your mom.")
+("Mom: Jack-Jack! You're just in time, dinner is almost ready.")
+
+("before you can approach your mom you get interupted by a long slender green figure.")
+("It looks like it's going to approach you, what are you going to do?")
+("shakingly, you put your hand on your laser gun")
+("you need to make a choice, think fast!")
+
+#if use lasergun
+("you killed an innocent being, a creature that had no intent of defending themselves.")
+
+#if give lasergun
+
+
+#if give granola bar 
+
+#if give LP
+
+
 
 
  
