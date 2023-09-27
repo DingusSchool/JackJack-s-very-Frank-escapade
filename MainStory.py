@@ -288,23 +288,42 @@ def locatie_printen(answer, locatie, kijkwoonkamer, kijkslaapcabine, kijkspeeltu
 
     elif locatie == "woonkamer":
         print("You entered the living room")
-        print("On your right is the kitchen, on your left you can find your dad's office.")
+        print("On your right is the kitchen, on your left you can find your dad's office")
         print("Jack-Jack: ’We need to find a way to get outside’")
         print("Jack-Jack: ’I remember that dad keeps the key under the doormat by the kitchen’")
         if "look" in answer:
             kijkwoonkamer = True
         if kijkwoonkamer:  # als woonkamer gekeken is, print dat er een plaat ligt
-            print("")
             if not plaat:  # tenzij de plaat opgepakt is
-                print("")
+                print("Jack-Jack:'hey, that's my dads favorite LP!'")
+                print("Jack-Jack:'Why not keep it around'")
+        
+
+    
     elif locatie == "kantoor":
-        print("")
+        print("you entered your dad’s office")
+        print("In the back you see a elegant pinewood desk")
+
         if not huissleutel:
-            print("")
+            print("Maybe there is something usefull in there")
+            print("Note: There are two drawers, you can open them by typing 'open drawer 1/2'")
+            
     elif locatie == "keuken":
-        print("")
+        print("you’ve entered the kitchen")
+        print("on right is the fridge with your favourite snacks, on your left you see the backyard trough the window door")
+        
     elif locatie == "achtertuin":
-        print("")
+        print("*opens door too the backyard*")
+        printen("*rustle* *rustle*")
+        print("Jack-Jack: ’what is that?’")
+        printen("*rustle* *rustle*")
+        print("Jack-Jack: ‘help, I’m too young too die!’")
+        print("The morbidly obese cat of your neighbours appears out of the bushes.")
+        print("Jack-Jack: ’Pumkin-pie, you scared me! You stupid cat....’")
+        print("Jack-Jack: ‘Oke, enough distraction let’s continue this adventure.’")
+        print(‘you entered the backyard’)
+        print("we see the strange UFO in the distance and your favourite play equipment: ‘MightyMooseMansion  XXL’ on your left")
+        
     elif locatie == "speeltuin":
         print("")
         if not breekijzer:
@@ -369,13 +388,14 @@ def helpen():
 
 def monoloog_typen(locatie, mama, woon):
     if locatie == "kamer mama":
-        print("opens door")
-        print("Jack-Jack: ‘mom?’ ")
-        printen(".........\n\n")
-        print("Jack-Jack: ’Mom, are you there?’")
-        printen(".........\n\n")
-        print("mom seems to be gone, I’m afraid you are on your own.")
-        mama = True
+        if not mama:
+            print("opens door")
+            print("Jack-Jack: ‘mom?’ ")
+            printen(".........\n\n")
+            print("Jack-Jack: ’Mom, are you there?’")
+            printen(".........\n\n")
+            print("mom seems to be gone, I’m afraid you are on your own.")
+            mama = True
     
     elif locatie == "woonkamer":
         woon = True
