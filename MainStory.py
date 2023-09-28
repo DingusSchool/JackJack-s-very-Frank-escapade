@@ -4,7 +4,7 @@ from time import sleep
 if True:  # hier worden alle checks ingevoerd, ik doe het in een IF zodat je het kan inklappen
     inventory = []
     options = []
-    
+
     woonkamerCheck = False
     speeltuinCheck = False
     ufoSlaapCheck = False
@@ -13,12 +13,12 @@ if True:  # hier worden alle checks ingevoerd, ik doe het in een IF zodat je het
     planetBussCheck = False
     alienKeyCheck = False
     doorOpenCheck = False
-    
+
     lookCheckLiving = False
     lookCheckSleep = False
     lookCheckPlay = False
     lookCheckStorage = False
-    
+
     itemVynilGet = False
     itemHouseKey = False
     itemSnicker = False
@@ -96,9 +96,10 @@ def item_pickups(locatie, aliensleutel, plaat, snickerreep, draakspeeltje, laser
                  woordenboek):
     # hier staan alle statements voor de inventory checks, als de speler "Look" heeft gebruikt
     if locatie == "woonkamer" and woonkamerCheck:
-        print("You have added the record of 'Roundabout - Yes' to your inventory.")
-        inventory.append("Record of 'Roundabout - Yes'")
-        plaat = True
+        if not plaat:
+            print("You have added the record of 'Roundabout - Yes' to your inventory.")
+            inventory.append("Record of 'Roundabout - Yes'")
+            plaat = True
     elif locatie == "speeltuin" and speeltuinCheck:
         print("Armed with a crowbar, you continue on your journey.")
         inventory.append("Crowbar")
