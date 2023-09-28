@@ -4,6 +4,7 @@ from time import sleep
 if True:  # hier worden alle checks ingevoerd, ik doe het in een IF zodat je het kan inklappen
     inventory = []
     options = []
+    
     woonkamerCheck = False
     speeltuinCheck = False
     ufoSlaapCheck = False
@@ -12,10 +13,12 @@ if True:  # hier worden alle checks ingevoerd, ik doe het in een IF zodat je het
     planetBussCheck = False
     alienKeyCheck = False
     doorOpenCheck = False
+    
     lookCheckLiving = False
     lookCheckSleep = False
     lookCheckPlay = False
     lookCheckStorage = False
+    
     itemVynilGet = False
     itemHouseKey = False
     itemSnicker = False
