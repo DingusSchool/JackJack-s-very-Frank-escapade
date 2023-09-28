@@ -41,3 +41,30 @@ def monoloog(part):
         print:(“Jack-Jack:’ I need to get get my homework done before the weekend starts, so let’s do that first.’”)
 monoloog1 = True
 
+elif part == monoloog2:
+    print:(“Jack-Jack:’The teacher gave us some difficult math equesions today, let’s try our best!’)
+    print:(“............”)
+    print:(uhhhh)
+    print:(oh this must be the answer)
+    print:(“..............”)
+    print:(“..............”)
+    print:(hmmmmm, oke almost done just a few more)
+    print:(“..............”)
+    print:(“..............”)
+
+    print:(got it! All done)
+
+    print:(now I did everything I needed to do for school my weekend can begin!)
+    print:(*knock* *knock* *knock*)
+    print:(“Mom:’ Jack-Jack?’”)
+    print:(“Mom:’Jack-Jack, did u eat your school lunch today?’”)
+    print:(“Jack-Jack:’oh no I forgot my schoollunch!’”)
+    print:(“Jack-Jack:’Im so sorry mom, I forgot.’”)
+    print:(“Mom:’ It’s oke, better luck next time.’”)
+    print:(“Mom: ‘Just give it to me so I can give it to the dog Instead’”)
+
+elif part == monoloog3:
+    
+
+
+
