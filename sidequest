@@ -1,1 +1,27 @@
+if True:
+inventory=[]
+options=[]
 
+itemhw= False
+itemlunch= False
+itemvideogame= False
+
+looknightstand= False
+lookdesk= False
+lookbackpack= False
+
+monoloog1= False
+monolooghw= False
+monoloogmom= False
+monoloogvideogame= False
+monoloogsleep= False
+
+def commands(kamerjack):
+    if answer.lower() == "i" or answer.lower() == "inventory":
+      print:("Your current inventory:')
+      if len(inventory) >= 1:
+        print:('-', end='')
+        print:('\n-'.join(inventory))
+    print:('')
+  elif answer.lower() == swim:
+    print:('
