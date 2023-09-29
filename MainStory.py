@@ -1,8 +1,9 @@
 import random
 from time import sleep
+import pygame
 
 if True:  # hier worden alle checks ingevoerd, ik doe het in een IF zodat je het kan inklappen
-    inventory = []
+    inventory = ["Record of 'Roundabout - Yes'"]
     options = []
 
     woonkamerCheck = False
@@ -38,8 +39,14 @@ if True:  # hier worden alle checks ingevoerd, ik doe het in een IF zodat je het
     monoloogStorage = False
     monoloogKrater = False
     monoloogAlienhuis = False
-    location = "achtertuin"
+    location = "alien huis binnen"
     antwoordGegeven = False
+
+
+def play_music(mp3file):
+    pygame.mixer.init()
+    pygame.mixer.music.load(mp3file)
+    pygame.mixer.music.play()
 
 
 def standard_checks(answer, locatie, woonkamerkijken, tuinkijken, ufokijken):
@@ -79,40 +86,52 @@ def standard_checks(answer, locatie, woonkamerkijken, tuinkijken, ufokijken):
                 print('HET EINDE (Dutch ending)')
                 exit()
             elif "round" in answer and "Record of 'Roundabout - Yes'" in inventory:
+                play_music("RoundaboutExtraTrim.mp3")
+                sleep(0.3)
                 print("The figure transforms in your dad.")
                 sleep(1)
-                print("Dad:'my favorite LP! You found it!'")
-                sleep(1)
+                print("Dad: 'My favorite LP! You found it!'")
+                sleep(0.96)
                 print("*starts playing roundabout - YES *")
-                sleep(2)
+                sleep(1.55)
                 print('To be continued...')
+                sleep(15)
                 exit()
             elif "rec" in answer and "Record of 'Roundabout - Yes'" in inventory:
+                play_music("RoundaboutExtraTrim.mp3")
+                sleep(0.3)
                 print("The figure transforms in your dad.")
                 sleep(1)
-                print("Dad:'my favorite LP! You found it!'")
-                sleep(1)
+                print("Dad: 'My favorite LP! You found it!'")
+                sleep(0.96)
                 print("*starts playing roundabout - YES *")
-                sleep(2)
+                sleep(1.55)
                 print('To be continued...')
+                sleep(15)
                 exit()
             elif "lp" in answer and "Record of 'Roundabout - Yes'" in inventory:
+                play_music("RoundaboutExtraTrim.mp3")
+                sleep(0.3)
                 print("The figure transforms in your dad.")
                 sleep(1)
-                print("Dad:'my favorite LP! You found it!'")
-                sleep(1)
+                print("Dad: 'My favorite LP! You found it!'")
+                sleep(0.96)
                 print("*starts playing roundabout - YES *")
-                sleep(2)
+                sleep(1.55)
                 print('To be continued...')
+                sleep(15)
                 exit()
             elif "yes" in answer and "Record of 'Roundabout - Yes'" in inventory:
+                play_music("RoundaboutExtraTrim.mp3")
+                sleep(0.3)
                 print("The figure transforms in your dad.")
                 sleep(1)
-                print("Dad:'my favorite LP! You found it!'")
-                sleep(1)
+                print("Dad: 'My favorite LP! You found it!'")
+                sleep(0.96)
                 print("*starts playing roundabout - YES *")
-                sleep(2)
+                sleep(1.55)
                 print('To be continued...')
+                sleep(15)
                 exit()
             else:
                 print("What would you like to give to the alien?")
@@ -715,18 +734,18 @@ def monoloog_typen(locatie, mama, woon, achter, cock, opslag, krater, house2):
     elif locatie == "alien huis binnen":
         if not house2:
             print("The light of the TV is casting a big shadow on the wall of a female profile sitting on the couch")
-            sleep(1)
-            print("While the woman turns her head you recognize it's your mommy.")
-            sleep(1)
-            print("Mom: Jack-Jack! You're just in time, dinner is almost ready.")
-            sleep(2)
-            print("Before you can approach your mom you get interrupted by a long slender green figure.")
-            sleep(1)
-            print("It looks like it's going to approach you, what are you going to do?")
-            sleep(1)
-            print("Shakingly, you put your hand on your laser gun.")
-            sleep(1)
-            print("You need to make a choice, think fast!")
+            # sleep(1)
+            # print("While the woman turns her head you recognize it's your mommy.")
+            # sleep(1)
+            # print("Mom: Jack-Jack! You're just in time, dinner is almost ready.")
+            # sleep(2)
+            # print("Before you can approach your mom you get interrupted by a long slender green figure.")
+            # sleep(1)
+            # print("It looks like it's going to approach you, what are you going to do?")
+            # sleep(1)
+            # print("Shakingly, you put your hand on your laser gun.")
+            # sleep(1)
+            # print("You need to make a choice, think fast!")
             house2 = True
 
     return locatie, mama, woon, achter, cock, opslag, krater, house2
@@ -734,19 +753,19 @@ def monoloog_typen(locatie, mama, woon, achter, cock, opslag, krater, house2):
 
 # hier start het verhaal
 helpen()
-sleep(6)
-printen("\n\n")
-printen("\n\n")
-printen("\n\n")
-printen("You (Jack-Jack) get woken up by a loud noise in the middle of the night\n\n")
-printen("‘Wow, that was super intense! What would that be?’\n")
-printen("‘If my father, Frank, were home, I'd ask him to investigate.‘\n")
-printen("‘But he is on a business trip right now...‘\n")
-printen("‘Let’s look for mom instead.’\n")
-printen("*grabs backpack*\n")
-printen("Jack-Jack: ‘Just in case’")
-print("\nIf you want to access your backpack (inventory) during any point of the game,")
-print("enter the command 'i' or 'inventory'")
+# sleep(6)
+# printen("\n\n")
+# printen("\n\n")
+# printen("\n\n")
+# printen("You (Jack-Jack) get woken up by a loud noise in the middle of the night\n\n")
+# printen("‘Wow, that was super intense! What would that be?’\n")
+# printen("‘If my father, Frank, were home, I'd ask him to investigate.‘\n")
+# printen("‘But he is on a business trip right now...‘\n")
+# printen("‘Let’s look for mom instead.’\n")
+# printen("*grabs backpack*\n")
+# printen("Jack-Jack: ‘Just in case’")
+# print("\nIf you want to access your backpack (inventory) during any point of the game,")
+# print("enter the command 'i' or 'inventory'")
 
 while True:
     antwoord = input("\n  >>> ").lower()
