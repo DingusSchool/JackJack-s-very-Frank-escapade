@@ -1,9 +1,15 @@
 if True:
     inventory=[]
 
-itemhw= False
-itemlunch= False
-itemvideogame= False
+
+itemhw = False
+itemlunch = False
+itemvideogame = False
+
+
+homework= False
+lunch= False
+videogame= False
 
 looknightstand= False
 lookdesk= False
@@ -14,7 +20,7 @@ monoloog2= False
 monoloog3= False
 monoloog4= False
 
-
+location = 'room'
 
 
 while True:
@@ -77,25 +83,22 @@ def standard_commands(answer):
     else: 
         return True,  mom.look,desk.look,nightstand.look
 
-def item_pickup(locatie, hw, lunch, videogame):
-    if locatie == nightstand and nightstand.check:
-        if not itemhw:
-            print("you've added 'homework' to your inventory")
-            inventory.append("homework")
-            hw = True
-    
-    if locatie == nightstand and nightstand.check:
-        if not itemlunch:
-            print("you've added 'lunch' to your inventory")
-            inventory.append("lunch")
-            lunch = True
-            
-    if locatie == desk and desk.check:
-        if not itemvideogame:
-            print("you've added 'Tony Hawk's Pro Skater' to you inventory")
-            inventory.append("'Tony Hawk's Pro Skater disk'")
-            videogame = True
-    return locatie, hw, lunch, videogame
+def item_pickup(item, inventory, homework, lunch, videogame):
+    if item == 'homework' and 'location' == 'nightstand':
+        inventory.append('homework')
+        homework = True
+        print('You picked up your homework')
+    if item == 'lunch' and 'location' == 'nightstand':
+        inventory.append('lunch')
+        lunch = True
+        print("You picked up your lunch")
+    if item == 'videogame' and location == 'desk':
+        inventory.append("Tony Hawk's Pro Skater")
+        videogame = True
+        print("you picked up 'Tony Hawk's Pro Skater'")
+    else:
+        print("You can't pick up that item here.")
+    return location, hw, lunch, videogame
 
 
 def monoloog(part):
@@ -162,4 +165,3 @@ def monoloog(part):
         if player_completed_task:
             monoloog4 == True
         
-
