@@ -15,7 +15,7 @@ looknightstand= False
 lookdesk= False
 lookbackpack= False
 
-monoloog1= True
+monoloog1= False
 monoloog2= False
 monoloog3= False
 monoloog4= False
@@ -107,6 +107,7 @@ def monoloog(part):
         print('Jack-Jack:"that was a long school day, Im so glad to be finally home!"')
         print('Jack-Jack:"I have some things I want to do before I go to bed still."')
         print('Jack-Jack:"I need to get get my homework done before the weekend starts, so let’s do that first.”')
+            monoloog1 = True
 
 
     elif part == monoloog2:
@@ -131,7 +132,7 @@ def monoloog(part):
         print('Mom:" It’s oke, better luck next time.”')
         print('Mom:"Just give it to me so I can give it to the dog Instead"')
         if player_completed_task:
-            monoloog2 == True
+            monoloog2 = True
 
     elif part == monoloog3:
         print('Jack-Jack:"here you go mom!"')
@@ -143,7 +144,7 @@ def monoloog(part):
         print('Jack-Jack:"lucky for me mom doesn’t know I already did my homework so maybe I can sneak in an extra hour of video games"')
         print('Jack-Jack:"let’s look for my *video game*"')
         if player_completed_task:
-            monoloog3 == True
+            monoloog3 = True
 
     elif part == monoloog4:
         print('*shuffle* *shuffle **shuffle*')
@@ -163,5 +164,5 @@ def monoloog(part):
         print('.....................')
         print('Jack-Jack:"Oke, lets go downstairs!"')
         if player_completed_task:
-            monoloog4 == True
+            monoloog4 = True
         
