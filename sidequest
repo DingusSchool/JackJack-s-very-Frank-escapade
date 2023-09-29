@@ -16,7 +16,9 @@ monoloogmom= False
 monoloogvideogame= False
 monoloogsleep= False
 
-def commands(answer):
+answer = input(>>>)
+
+def standard.commands(answer):
     if answer.lower() == "i" or answer.lower() == "inventory":
       print:("Your current inventory:')
       if len(inventory) >= 1:
@@ -32,6 +34,14 @@ def commands(answer):
   elif answer.lower() == 'eat':
     print:('your mom is making dinner right now, a bit more patience')
   return(answer)
+elif answer.lower() == 'look':
+
+def look()
+    if answer.lower() == 'look rigt' or 'look r':
+        print:('That's my computer desk!')
+    if answer.lower() == 'look left' or 'look l:
+        print:('That's my nightstand!')
+
 
 def monoloog(part):
     if part == monoloog1:
@@ -62,9 +72,41 @@ elif part == monoloog2:
     print:(“Jack-Jack:’Im so sorry mom, I forgot.’”)
     print:(“Mom:’ It’s oke, better luck next time.’”)
     print:(“Mom: ‘Just give it to me so I can give it to the dog Instead’”)
+monoloog2 == True
 
 elif part == monoloog3:
-    
+    print:(“Jack-Jack:’here you go mom!’)
+    print:(“Mom:’Thank you honey.”)
+    print:(“Mom:’you know the rules, after homework you can only play an hour of videogames.”)
+    print:(Jack-Jack:’Yes mom, I know.’”)
+    print:(Mom:’Bye now honey.’)
+    print:(*door closes*)
+    print:(“Jack-Jack:’lucky for me mom doesn’t know I already did my homework so maybe I can sneak in an extra hour of video games’”)
+    print:(“Jack-Jack: ‘let’s look for my *video game*’”)
+monoloog3 == True
+
+elif part == monoloog4:
+    print:(*shuffle* *shuffle **shuffle*)
+    print:(“..................”)
+    print:(“Jack-Jack:’found it!’)
+    print:(*grabs *video game*)
+    print:(*inserts disk*)
+    print:(*BZZZZT*)
+    print:(“Jack-Jack:’let’s do this!’)
+    print:(“.....................”)
+    print:(“.....................”)
+    print:(“Jack-Jack:’That was fun but it’s probably time for dinner now’”)
+    print:("mom:'Jack-Jack! Dinner is ready!'")
+    print:("Jack-Jack:'Yes mom! i'll come in a second!')
+    print:(*shuffle* *shuffle **shuffle*)
+    print:(“.....................”)
+    print:(“.....................”)
+    print:("Jack-Jack:'Oke, let's go downstairs!")
+monoloog4 == True
+
+
+
+   
 
 
 
