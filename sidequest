@@ -34,13 +34,45 @@ def standard.commands(answer):
   elif answer.lower() == 'eat':
     print:('your mom is making dinner right now, a bit more patience')
   return(answer)
-elif answer.lower() == 'look':
 
-def look()
-    if answer.lower() == 'look rigt' or 'look r':
-        print:('That's my computer desk!')
-    if answer.lower() == 'look left' or 'look l:
-        print:('That's my nightstand!')
+if answer == 'look':
+    if locatie == 'nightstand':
+        print:("my bed and nightstand, my backpack is here as well!")
+        nightstand.look = True 
+        return True,  mom.look,desk.look,nightstand.look
+    elif locatie == 'desk':
+        print:("I see my favorite videogames, PC and some secret candy stash.")
+        desk.look = True
+        return True,  mom.look,desk.look,nightstand.look
+    elif locatie == 'mom'
+        print:("that's my mom, I love her, let's give her my lunch like she asked us.")
+        mom.look = True
+        return True, mom.look,desk.look,nightstand.look
+    else: 
+        return True,  mom.look,desk.look,nightstand.look
+
+def item.pickup(locatie, hw, lunch, videogame):
+if locatie == nightstand and nightstand.check:
+    if not hw:
+    print("you've added 'homework' to your inventory")
+    inventory.append("homework")
+    hw = True
+
+if locatie == nightstand and nightstand.check:
+     if not lunch:
+     print("you've added 'lunch' to your inventory")
+     inventory.append("lunch")
+     lunch = True
+
+if locatie == desk and desk.check:
+    if not videogame:
+    print:("you've added 'Tony Hawk's Pro Skater' to you inventory")
+    inventory.append('Tony Hawk's Pro Skater disk')
+    videogame = True
+
+return locatie, hw, lunch, videogame
+
+
 
 
 def monoloog(part):
