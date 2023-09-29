@@ -3,7 +3,7 @@ from time import sleep
 import pygame
 
 if True:  # hier worden alle checks ingevoerd, ik doe het in een IF zodat je het kan inklappen
-    inventory = ["Record of 'Roundabout - Yes'"]
+    inventory = ["Record of 'Roundabout - Yes'", "Laser gun"]
     options = []
 
     woonkamerCheck = False
@@ -62,6 +62,9 @@ def standard_checks(answer, locatie, woonkamerkijken, tuinkijken, ufokijken):
                 print("Dad: 'You were a mistake.'")
                 sleep(1)
                 print("*PEW PEW*")
+                play_music("laserGunPew.mp3")
+                sleep(0.45)
+                play_music("laserGunPew.mp3")
                 sleep(2)
                 print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
                 print("\033[91m{}\033[00m".format("You died."))
@@ -143,6 +146,7 @@ def standard_checks(answer, locatie, woonkamerkijken, tuinkijken, ufokijken):
                 return True, woonkamerkijken, tuinkijken, ufokijken
         elif "shoot" in answer:
             print("You kill the innocent creature.")
+            play_music("BigLaserCannon.mp3")
             sleep(1)
             print("The creature that had no harm intended")
             sleep(1)
@@ -160,6 +164,7 @@ def standard_checks(answer, locatie, woonkamerkijken, tuinkijken, ufokijken):
             exit()
         elif "kill" in answer:
             print("You kill the innocent creature.")
+            play_music("BigLaserCannon.mp3")
             sleep(1)
             print("The creature that had no harm intended")
             sleep(1)
@@ -177,6 +182,7 @@ def standard_checks(answer, locatie, woonkamerkijken, tuinkijken, ufokijken):
             exit()
         elif "gun" in answer:
             print("You kill the innocent creature.")
+            play_music("BigLaserCannon.mp3")
             sleep(1)
             print("The creature that had no harm intended")
             sleep(1)
@@ -194,6 +200,7 @@ def standard_checks(answer, locatie, woonkamerkijken, tuinkijken, ufokijken):
             exit()
         elif "murd" in answer:
             print("You kill the innocent creature.")
+            play_music("BigLaserCannon.mp3")
             sleep(1)
             print("The creature that had no harm intended")
             sleep(1)
