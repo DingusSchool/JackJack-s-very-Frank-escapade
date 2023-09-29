@@ -11,12 +11,48 @@ lookdesk= False
 lookbackpack= False
 
 monoloog1= False
-monolooghw= False
-monoloogmom= False
-monoloogvideogame= False
-monoloogsleep= False
+monoloog2= False
+monoloog3= False
+monoloog4= False
 
-answer = input('>>>')
+
+
+while True:
+    answer = input('>>>> ').lower()
+    if "pick" in answer or "get" in answer or "take" in answer:
+          locatie, itemhw, itemlunch, itemvideogame = item_pickup(locatie, itemhw, itemlunch, itemvideogame)
+          
+    elif 'go' in answer:
+        desk, mom, nightstand = change_location(desk, mom, nightstand)
+        
+    elif 'give' in answer:
+        itemhw, itemlunch, itemvideogame = give_item(itemhw, itemlunch, itemvideogame)
+          
+standard_commands(answer)
+item_pickup(locatie, itemhw, itemlunch, itemvideogame), monoloog(part)
+
+
+def player_completed_task(itemhw, desk):
+    if itemhw and 'go' in desk:
+        return True
+    elif player_completed_task2:
+        if itemlunch and 'go' in mom:
+            return True
+    elif player_completed_task3:
+        if itemvideogame and 'go' in desk:
+            return True
+            
+    
+    
+    
+if player_completed_task:
+    monoloog(monoloog2) == True
+elif player_completed_task2:
+    monoloog(monoloog3) == True
+elif player_completed_task3:
+    monoloog(monoloog4) == True
+
+          
 
 def standard_commands(answer):
     if answer.lower() == "i" or answer.lower() == "inventory":
@@ -54,25 +90,23 @@ def standard_commands(answer):
 
 def item_pickup(locatie, hw, lunch, videogame):
     if locatie == nightstand and nightstand.check:
-        if not hw:
+        if not itemhw:
             print("you've added 'homework' to your inventory")
             inventory.append("homework")
             hw = True
     
     if locatie == nightstand and nightstand.check:
-        if not lunch:
+        if not itemlunch:
             print("you've added 'lunch' to your inventory")
             inventory.append("lunch")
             lunch = True
             
     if locatie == desk and desk.check:
-        if not videogame:
+        if not itemvideogame:
             print("you've added 'Tony Hawk's Pro Skater' to you inventory")
             inventory.append("'Tony Hawk's Pro Skater disk'")
             videogame = True
             return locatie, hw, lunch, videogame
-
-
 
 
 def monoloog(part):
@@ -105,7 +139,8 @@ def monoloog(part):
         print('Jack-Jack:"Im so sorry mom, I forgot.”')
         print('Mom:" It’s oke, better luck next time.”')
         print('Mom:"Just give it to me so I can give it to the dog Instead"')
-        monoloog2 == True
+        if player_completed_task:
+            monoloog2 == True
 
     elif part == monoloog3:
         print('Jack-Jack:"here you go mom!"')
@@ -116,7 +151,8 @@ def monoloog(part):
         print('*door closes*')
         print('Jack-Jack:"lucky for me mom doesn’t know I already did my homework so maybe I can sneak in an extra hour of video games"')
         print('Jack-Jack:"let’s look for my *video game*"')
-        monoloog3 == True
+        if player_completed_task:
+            monoloog3 == True
 
     elif part == monoloog4:
         print('*shuffle* *shuffle **shuffle*')
@@ -135,9 +171,9 @@ def monoloog(part):
         print('.....................')
         print('.....................')
         print('Jack-Jack:"Oke, lets go downstairs!"')
-        monoloog4 == True
-
-   
+        if player_completed_task:
+            monoloog4 == True
+        
 
 
 
