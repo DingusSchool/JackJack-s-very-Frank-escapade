@@ -38,7 +38,7 @@ if True:  # hier worden alle checks ingevoerd, ik doe het in een IF zodat je het
     monoloogStorage = False
     monoloogKrater = False
     monoloogAlienhuis = False
-    location = "kamer Jack"
+    location = "achtertuin"
     antwoordGegeven = False
 
 
@@ -46,6 +46,150 @@ def standard_checks(answer, locatie, woonkamerkijken, tuinkijken, ufokijken):
     if "back" in answer.lower():  # als speler terug wil, mag dat lekker niet
         print("You look back, only to see your deepest regrets in life.\nGoing back is not an option anymore. Ever.")
         return True, woonkamerkijken, tuinkijken, ufokijken
+
+    if locatie == "alien huis binnen":
+        if "give" in answer:
+            if "gun" in answer and "Laser gun" in inventory:
+                print("The figure transforms into your dad.")
+                sleep(2)
+                print("Dad: 'You were a mistake.'")
+                sleep(1)
+                print("*PEW PEW*")
+                sleep(2)
+                print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+                print("\033[91m{}\033[00m".format("You died."))
+                print("\n\n\n\n\n")
+                exit()
+            elif "bar" in answer and "Snicker bar" in inventory:
+                print("The figure transforms in your dad.")
+                sleep(1)
+                print("Dad:'thanks son, I was not feeling like myself.'")
+                sleep(1)
+                print("Jack-Jack:'You're not yourself when you're hungry'")
+                sleep(2)
+                print('DAS ENDE (German ending)')
+                exit()
+            elif "snick" in answer and "Snicker bar" in inventory:
+                print("The figure transforms in your dad.")
+                sleep(1)
+                print("Dad:'thanks son, I was not feeling like myself.'")
+                sleep(1)
+                print("Jack-Jack:'You're not yourself when you're hungry'")
+                sleep(2)
+                print('HET EINDE (Dutch ending)')
+                exit()
+            elif "round" in answer and "Record of 'Roundabout - Yes'" in inventory:
+                print("The figure transforms in your dad.")
+                sleep(1)
+                print("Dad:'my favorite LP! You found it!'")
+                sleep(1)
+                print("*starts playing roundabout - YES *")
+                sleep(2)
+                print('To be continued...')
+                exit()
+            elif "rec" in answer and "Record of 'Roundabout - Yes'" in inventory:
+                print("The figure transforms in your dad.")
+                sleep(1)
+                print("Dad:'my favorite LP! You found it!'")
+                sleep(1)
+                print("*starts playing roundabout - YES *")
+                sleep(2)
+                print('To be continued...')
+                exit()
+            elif "lp" in answer and "Record of 'Roundabout - Yes'" in inventory:
+                print("The figure transforms in your dad.")
+                sleep(1)
+                print("Dad:'my favorite LP! You found it!'")
+                sleep(1)
+                print("*starts playing roundabout - YES *")
+                sleep(2)
+                print('To be continued...')
+                exit()
+            elif "yes" in answer and "Record of 'Roundabout - Yes'" in inventory:
+                print("The figure transforms in your dad.")
+                sleep(1)
+                print("Dad:'my favorite LP! You found it!'")
+                sleep(1)
+                print("*starts playing roundabout - YES *")
+                sleep(2)
+                print('To be continued...')
+                exit()
+            else:
+                print("What would you like to give to the alien?")
+                print("Your current inventory:")
+                if len(inventory) >= 1:
+                    print("- ", end="")
+                print("\n- ".join(inventory))
+                print("")
+                return True, woonkamerkijken, tuinkijken, ufokijken
+        elif "shoot" in answer:
+            print("You kill the innocent creature.")
+            sleep(1)
+            print("The creature that had no harm intended")
+            sleep(1)
+            print("Your mommy starts crying, saying:")
+            sleep(0.5)
+            print("'FRANK!?!'")
+            sleep(2)
+            print("She then looks at you with disgust in her eyes.")
+            sleep(1.5)
+            print("She then disappears into nothingness with a loud *VWOOP*")
+            sleep(1.5)
+            print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+            print("Good luck with Orphan life on a random planet :D")
+            print("SLUTET (Swedish ending)")
+            exit()
+        elif "kill" in answer:
+            print("You kill the innocent creature.")
+            sleep(1)
+            print("The creature that had no harm intended")
+            sleep(1)
+            print("Your mommy starts crying, saying:")
+            sleep(0.5)
+            print("'FRANK!?!'")
+            sleep(2)
+            print("She then looks at you with disgust in her eyes.")
+            sleep(1.5)
+            print("She then disappears into nothingness with a loud *VWOOP*")
+            sleep(1.5)
+            print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+            print("Good luck with Orphan life on a random planet :D")
+            print("LOPPU (Finnish ending)")
+            exit()
+        elif "gun" in answer:
+            print("You kill the innocent creature.")
+            sleep(1)
+            print("The creature that had no harm intended")
+            sleep(1)
+            print("Your mommy starts crying, saying:")
+            sleep(0.5)
+            print("'FRANK!?!'")
+            sleep(2)
+            print("She then looks at you with disgust in her eyes.")
+            sleep(1.5)
+            print("She then disappears into nothingness with a loud *VWOOP*")
+            sleep(1.5)
+            print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+            print("Good luck with Orphan life on a random planet :D")
+            print("SLUTTEN (Norse ending)")
+            exit()
+        elif "murd" in answer:
+            print("You kill the innocent creature.")
+            sleep(1)
+            print("The creature that had no harm intended")
+            sleep(1)
+            print("Your mommy starts crying, saying:")
+            sleep(0.5)
+            print("'FRANK!?!'")
+            sleep(2)
+            print("She then looks at you with disgust in her eyes.")
+            sleep(1.5)
+            print("She then disappears into nothingness with a loud *VWOOP*")
+            sleep(1.5)
+            print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+            print("Good luck with Orphan life on a random planet :D")
+            print("SLUTNINGEN (Danish ending)")
+            exit()
 
     if answer == "look":
         if locatie == "woonkamer":
@@ -61,6 +205,9 @@ def standard_checks(answer, locatie, woonkamerkijken, tuinkijken, ufokijken):
                 print("Whoa! A dictionary of some kind!")
                 print("You don't recognise the language, but it seems cool.")
                 ufokijken = True
+            return True, woonkamerkijken, tuinkijken, ufokijken
+        elif locatie == "ufo cockpit":
+            print("Oh hey, the key is right here on the chair.")
             return True, woonkamerkijken, tuinkijken, ufokijken
         else:
             return True, woonkamerkijken, tuinkijken, ufokijken
@@ -93,7 +240,7 @@ def standard_checks(answer, locatie, woonkamerkijken, tuinkijken, ufokijken):
             print("The alien gets jump-scared and starts crying. You monster.")
         return True, woonkamerkijken, tuinkijken, ufokijken
     elif "eat" in answer.lower():
-        print("I can't seem to recognize that verb.")
+        print("\033[91m{}\033[00m".format("You are not hungry."))
         return True, woonkamerkijken, tuinkijken, ufokijken
     else:
         return False, woonkamerkijken, tuinkijken, ufokijken
@@ -122,7 +269,7 @@ def item_pickups(locatie, aliensleutel, plaat, snickerreep, draakspeeltje, laser
 
     elif locatie == "ufo opslag":  # bij de opslag geven we 2 items, als er "Look" is gebruikt, geven we een 3e
         if ufoOpslagCheck:
-             if not woordenboek:
+            if not woordenboek:
                 print("You have picked up the dictionary, this might come in handy later.")
                 inventory.append("Dictionary")
                 woordenboek = True
@@ -153,6 +300,7 @@ def item_pickups(locatie, aliensleutel, plaat, snickerreep, draakspeeltje, laser
             print("Jack-Jack: 'What is going on here?? How did this happen?'")
             inventory.append("Identical house key?")
             aliensleutel = True
+            locatie = "alien huis buiten"
 
     return locatie, aliensleutel, plaat, snickerreep, draakspeeltje, lasergeweer, breekijzer, accu, ufosleutel, woordenboek
 
@@ -265,13 +413,11 @@ def locatie_checks(opties, plaats, pispotcheck,
     elif plaats == "ufo buiten":
         opties = ["ufo cockpit", "achtertuin"]
         if "in" in antwoord or "ufo" in antwoord:
-            if "crowbar" in inventory:
-                inventory.remove("crowbar")
-                ufodeuropen = True
-                plaats = "ufo cockpit"
-            elif "crowbar" not in inventory:
+            if "Crowbar" not in inventory:
                 if ufodeuropen:
                     plaats = "ufo cockpit"
+            if not ufodeuropen:
+                print("The door is shut and very heavy, maybe you can find something to pry it open.")
         elif "ard" in antwoord:
             plaats = "achtertuin"
         else:
@@ -328,22 +474,20 @@ def locatie_checks(opties, plaats, pispotcheck,
             if "mat" in antwoord:
                 plaats = "alien deurmat"
             elif "door" in antwoord or "in" in antwoord:
-                plaats = "alien huis binnen"
+                print("The door is locked.")
             else:
                 print("\033[91m{}\033[00m".format("I can't seem to understand this location"))
         elif alienKeyCheck:
             opties = ["alien huis binnen"]
             if "door" in antwoord or "in" in antwoord:
                 plaats = "alien huis binnen"
+                inventory.remove("Identical house key?")
             else:
                 print("\033[91m{}\033[00m".format("I can't seem to understand this location"))
 
     elif plaats == "alien huis binnen":
         opties = ["alien huis buiten"]
-        if "out" in antwoord:
-            plaats = "alien huis buiten"
-        else:
-            print("\033[91m{}\033[00m".format("I can't seem to understand this location"))
+        print("\033[91m{}\033[00m".format("You can't run from a trainer battle"))
 
     return opties, plaats, pispotcheck, deurcheck, ufodeuropen
 
@@ -398,7 +542,7 @@ def locatie_printen(answer, locatie, kijkwoonkamer, kijkslaapcabine, kijkspeeltu
 
     elif locatie == "ufo cockpit":
         print("You are in the cockpit")
-        print("This location is connected to the storage and sleeping cabin.")
+        print("We see two doors, the left door appears to lead to a storage and the right door to a sleeping cabin.")
 
     elif locatie == "ufo slaapcabine":
         print("You are in the sleeping cabin, it seems kinda personal and private.")
@@ -412,9 +556,20 @@ def locatie_printen(answer, locatie, kijkwoonkamer, kijkslaapcabine, kijkspeeltu
         print("You are in the crater")
 
     elif locatie == "alien huis buiten":
-        print("You are in on the outside of the familiar house")
+        print("You are on the outside of the familiar house")
+        print("The nameplate has three names you can not read.")
+        if itemDictionary:
+            print("Using the dictionary you found in the UFO, you can decipher the script:")
+            sleep(1)
+            print("Welcome to the Joestar household.")
+            print("- Frank")
+            print("- Mary")
+            print("- Jack-Jack")
+
         if not aliensleutel:
-            print("")
+            print("Jack-Jack: 'This doormat is the same as mine'")
+            print("Jack-Jack: 'Maybe the back-up key I take when I")
+            print("            get home from school is under here as well?'")
 
     elif locatie == "alien huis binnen":
         print("You are in the familiar house")
@@ -422,6 +577,10 @@ def locatie_printen(answer, locatie, kijkwoonkamer, kijkslaapcabine, kijkspeeltu
     elif locatie == "ufo opslag":
         if not kijkopslag:
             print("Since this is a storage, there might be more things hidden under the rubble...")
+
+    elif locatie == "alien deurmat":
+        if not alienKeyCheck:
+            print("Jack-Jack: 'What?? My house's back-up key!'")
     return answer, locatie, kijkwoonkamer, kijkslaapcabine, kijkspeeltuin, kijkopslag, aliensleutel, plaat, huissleutel, snickerreep, draakspeeltje, lasergeweer, breekijzer, accu, ufosleutel, woordenboek
 
 
@@ -458,29 +617,29 @@ def monoloog_typen(locatie, mama, woon, achter, cock, opslag, krater, house2):
 
     elif locatie == "woonkamer":
         if not woon:
-            # print("Jack-Jack: ’We need to find a way to get outside’")
-            # print("Jack-Jack: ’I remember that dad keeps the key under the doormat by the kitchen’")
-            # print("Jack-Jack:’ the new season of my favourite TV-show just aired.’")
-            # print("*The new Rick & Morty season is playing*")
-            # printen("......\n\n")
-            # sleep(0.5)
-            # printen("......\n\n")
-            # sleep(0.5)
-            # printen("......\n\n")
-            # print("Jack-Jack:’Oke that’s enough fun, let’s investigate further.’")
+            print("Jack-Jack: ’We need to find a way to get outside’")
+            print("Jack-Jack: ’I remember that dad keeps the key under the doormat by the kitchen’")
+            print("Jack-Jack:’ the new season of my favourite TV-show just aired.’")
+            print("*The new Rick & Morty season is playing*")
+            printen("......\n\n")
+            sleep(0.5)
+            printen("......\n\n")
+            sleep(0.5)
+            printen("......\n\n")
+            print("Jack-Jack:’Oke that’s enough fun, let’s investigate further.’")
             woon = True
 
     elif locatie == "achtertuin":
         if not achter:
-            # print("*opens door too the backyard*")
-            # printen("*rustle* *rustle*\n")
-            # print("Jack-Jack: ’what is that?’")
-            # printen("*rustle* *rustle*\n")
-            # print("Jack-Jack: ‘help, I’m too young to die!’")
-            # printen('.........\n\n')
-            # print("The morbidly obese cat of your neighbours appears out of the bushes.")
-            # print("Jack-Jack: ’Pumkin-pie, you scared me! You stupid cat....’")
-            # print("Jack-Jack: ‘Oke, enough distraction let’s continue this adventure.’")
+            print("*opens door too the backyard*")
+            printen("*rustle* *rustle*\n")
+            print("Jack-Jack: ’what is that?’")
+            printen("*rustle* *rustle*\n")
+            print("Jack-Jack: ‘help, I’m too young to die!’")
+            printen('.........\n\n')
+            print("The morbidly obese cat of your neighbours appears out of the bushes.")
+            print("Jack-Jack: ’Pumkin-pie, you scared me! You stupid cat....’")
+            print("Jack-Jack: ‘Oke, enough distraction let’s continue this adventure.’")
             achter = True
 
     elif locatie == "ufo cockpit":
@@ -507,23 +666,23 @@ def monoloog_typen(locatie, mama, woon, achter, cock, opslag, krater, house2):
 
     elif locatie == "krater":
         if not krater:
-            printen("*BLING BLONG* *BLING BLONG* *BLING BLONG*")
+            printen("*BLING BLONG* *BLING BLONG* *BLING BLONG*\n")
             sleep(1)
-            print("Jack-Jack:'all the lights are flickering'")
+            print("Jack-Jack: 'all the lights are flickering'")
             sleep(1)
-            print("Jack-Jack:'I hope this is going to work out.'")
+            print("Jack-Jack: 'I hope this is going to work out.'")
             sleep(1)
-            printen("*PRzzRzRT PRzzRRTzTRzzRTT TRzPzPPPzzzTRzPzRRT*")
+            printen("*PRzzRzRT PRzzRRTzTRzzRTT TRzPzPPPzzzTRzPzRRT*\n")
             sleep(1)
-            print("Jack-Jack:'wow it's shaky!")
+            print("Jack-Jack: 'wow it's shaky!")
             sleep(1)
-            print("Jack-Jack:'It's coming off the ground!'")
+            print("Jack-Jack: 'It's coming off the ground!'")
             sleep(1)
-            printen("*PRzzRzRT PRzzRRTzTRzzRTT TRzPzPPPzzzTRzPzRRT*")
+            printen("*PRzzRzRT PRzzRRTzTRzzRTT TRzPzPPPzzzTRzPzRRT*\n")
             sleep(1)
-            print("Jack-Jack:'It's actually flying!'")
+            print("Jack-Jack: 'It's actually flying!'")
             sleep(1)
-            print("Jack-Jack:'I can see my house become a small dot'")
+            print("Jack-Jack: 'I can see my house become a small dot!!'")
             sleep(3)
             print("The UFO is flying with the speed of light")
             sleep(1)
@@ -531,41 +690,63 @@ def monoloog_typen(locatie, mama, woon, achter, cock, opslag, krater, house2):
             sleep(1)
             print("strange planets, extraterrestrial beings, floating rocks.")
             sleep(1)
-            print("after hours of traveling the UFO lands on a strange purple planet called: 'BUSS'")
+            print("After hours of traveling the UFO lands on a strange purple planet called: 'BUSS'")
+            sleep(0.5)
+            printen("*PRzzRzRT PRzzRRTzTRzzRTT TRzPzPPPzzzTRzPzRRT*\n")
+            printen("*BBZZZZRRRRFFFFTTT*\n")
+            sleep(2)
+            print("*CLANK!*")
+            sleep(1)
+            print("While the door of the UFO opens Jack-Jack peeks out to check if everything is safe")
+            sleep(1)
+            print("Jack-Jack:'it's very quiet here'")
+            sleep(1)
+            print("Jack-Jack:'Let's look around'")
+            sleep(1)
+            print("In the distance you see a house that looks very familiar.")
+            sleep(1)
+            print("Jack-Jack: 'Is that my house?'")
+            sleep(1)
+            print("A warm cozy light is oozing out of the windows, the smell of his favorite dinner caresses Jack-Jacks nostrils.")
+            sleep(1)
+            print("Jack-Jack:'would mom be there?'")
             krater = True
 
-    elif locatie == "alien huis":
-        print("The light of the TV is casting a big shadow on the wall of a female profile sitting on the couch")
-        sleep(1)
-        print("While the woman turns her head you recognize it's your mom.")
-        sleep(1)
-        print("Mom: Jack-Jack! You're just in time, dinner is almost ready.")
-        sleep(2)
-        print("Before you can approach your mom you get interrupted by a long slender green figure.")
-        sleep(1)
-        print("It looks like it's going to approach you, what are you going to do?")
-        sleep(1)
-        print("Shakingly, you put your hand on your laser gun")
-        sleep(1)
-        print("you need to make a choice, think fast!")
-        house2 = True
+    elif locatie == "alien huis binnen":
+        if not house2:
+            print("The light of the TV is casting a big shadow on the wall of a female profile sitting on the couch")
+            sleep(1)
+            print("While the woman turns her head you recognize it's your mommy.")
+            sleep(1)
+            print("Mom: Jack-Jack! You're just in time, dinner is almost ready.")
+            sleep(2)
+            print("Before you can approach your mom you get interrupted by a long slender green figure.")
+            sleep(1)
+            print("It looks like it's going to approach you, what are you going to do?")
+            sleep(1)
+            print("Shakingly, you put your hand on your laser gun.")
+            sleep(1)
+            print("You need to make a choice, think fast!")
+            house2 = True
 
     return locatie, mama, woon, achter, cock, opslag, krater, house2
 
 
 # hier start het verhaal
 helpen()
-# sleep(6)
-# printen("\n\n")
-# printen("\n\n")
-# printen("\n\n")
-# printen("You (Jack-Jack) get woken up by a loud noise in the middle of the night\n\n")
-# printen("‘Wow, that was super intense! What would that be?’\n")
-# printen("‘let’s look for mom.’\n")
-# printen("*grabs backpack*\n")
-# printen("Jack-Jack: ‘Just in case’")
-# print("\nIf you want to access your backpack during any point of the game,")
-# print("enter the command 'i' or 'inventory'")
+sleep(6)
+printen("\n\n")
+printen("\n\n")
+printen("\n\n")
+printen("You (Jack-Jack) get woken up by a loud noise in the middle of the night\n\n")
+printen("‘Wow, that was super intense! What would that be?’\n")
+printen("‘If my father, Frank, were home, I'd ask him to investigate.‘\n")
+printen("‘But he is on a business trip right now...‘\n")
+printen("‘Let’s look for mom instead.’\n")
+printen("*grabs backpack*\n")
+printen("Jack-Jack: ‘Just in case’")
+print("\nIf you want to access your backpack (inventory) during any point of the game,")
+print("enter the command 'i' or 'inventory'")
 
 while True:
     antwoord = input("\n  >>> ").lower()
@@ -579,8 +760,7 @@ while True:
             location, alienKeyCheck, itemVynilGet, itemSnicker, itemBadDragon, itemLaserGun, itemCrowbar, itemBattery,
             itemUFOKey, itemDictionary)
     elif "go" in antwoord or "walk" in antwoord:
-        options, location, bathroomCheck, doorOpenCheck, ufoDoorOpen = locatie_checks(options, location, bathroomCheck,
-                                                                         doorOpenCheck, ufoDoorOpen)
+        options, location, bathroomCheck, doorOpenCheck, ufoDoorOpen = locatie_checks(options, location, bathroomCheck, doorOpenCheck, ufoDoorOpen)
     elif "open" in antwoord:
         if location == "ufo buiten":
             if not ufoDoorOpen:
@@ -590,6 +770,7 @@ while True:
                 print("Jack-Jack: *cough* *cough*")
                 print("Jack-Jack: ‘there is a lot of smoke cumming out, I hope it is safe’")
                 ufoDoorOpen = True
+                inventory.remove("Crowbar")
 
         if location == "kantoor":
             if "1" in antwoord:
@@ -604,12 +785,22 @@ while True:
 
     else:
         print("\033[91m{}\033[00m".format("I can't seem to understand this command"))
+
+    if location == "ufo cockpit" and "UFO battery" in inventory and "UFO key" in inventory:
+        location = "krater"
+        inventory.remove("UFO battery")
+        inventory.remove("UFO key")
+        planetBussCheck = True
+
     print("")
     location, monoloogMama, monoloogWoon, monoloogAchter, monoloogCock, monoloogStorage, monoloogKrater, monoloogAlienhuis = monoloog_typen(
         location, monoloogMama, monoloogWoon, monoloogAchter, monoloogCock, monoloogStorage, monoloogKrater,
         monoloogAlienhuis)
     print("")
-    antwoord, location, lookCheckLiving, lookCheckSleep, lookCheckPlay, lookCheckStorage, alienKeyCheck, itemVynilGet, itemHouseKey, itemSnicker, itemBadDragon, itemLaserGun, itemCrowbar, itemBattery, itemUFOKey, itemDictionary = locatie_printen(
-        antwoord, location, lookCheckLiving, lookCheckSleep, lookCheckPlay, lookCheckStorage, alienKeyCheck,
-        itemVynilGet, itemHouseKey, itemSnicker, itemBadDragon, itemLaserGun, itemCrowbar, itemBattery, itemUFOKey,
-        itemDictionary)
+    if location != "alien huis binnen":
+        antwoord, location, lookCheckLiving, lookCheckSleep, lookCheckPlay, lookCheckStorage, alienKeyCheck, itemVynilGet, itemHouseKey, itemSnicker, itemBadDragon, itemLaserGun, itemCrowbar, itemBattery, itemUFOKey, itemDictionary = locatie_printen(
+            antwoord, location, lookCheckLiving, lookCheckSleep, lookCheckPlay, lookCheckStorage, alienKeyCheck,
+            itemVynilGet, itemHouseKey, itemSnicker, itemBadDragon, itemLaserGun, itemCrowbar, itemBattery, itemUFOKey,
+            itemDictionary)
+
+    print(location)
