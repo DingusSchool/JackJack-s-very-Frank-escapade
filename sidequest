@@ -9,10 +9,11 @@ looknightstand= False
 lookdesk= False
 lookbackpack= False
 
-monoloog1= False
+monoloog1= True
 monoloog2= False
 monoloog3= False
 monoloog4= False
+
 
 
 
@@ -27,29 +28,18 @@ while True:
     elif 'give' in answer:
         itemhw, itemlunch, itemvideogame = give_item(itemhw, itemlunch, itemvideogame)
           
-standard_commands(answer)
-item_pickup(locatie, itemhw, itemlunch, itemvideogame), monoloog(part)
 
 
-def player_completed_task(itemhw, desk,itemvideogame, mom):
-    if itemhw and 'go' in desk:
-        return True
+def player_completed_task(itemhw, desk, itemlunch, mom, itemvideogame):
+    if itemhw and desk == 'go':
+        monoloog2 = True
     elif player_completed_task2:
-        if itemlunch and 'go' in mom:
-            return True
+        if itemlunch and mom == 'go':
+            monoloog3 = True
     elif player_completed_task3:
-        if itemvideogame and 'go' in desk:
-            return True
-            
-    
-    
-    
-if player_completed_task:
-    monoloog(monoloog2) == True
-elif player_completed_task2:
-    monoloog(monoloog3) == True
-elif player_completed_task3:
-    monoloog(monoloog4) == True
+        if itemvideogame and desk == 'go':
+            monoloog4 = True
+    return monoloog2, monoloog3, monoloog4
 
           
 
@@ -105,7 +95,7 @@ def item_pickup(locatie, hw, lunch, videogame):
             print("you've added 'Tony Hawk's Pro Skater' to you inventory")
             inventory.append("'Tony Hawk's Pro Skater disk'")
             videogame = True
-            return locatie, hw, lunch, videogame
+    return locatie, hw, lunch, videogame
 
 
 def monoloog(part):
@@ -114,7 +104,6 @@ def monoloog(part):
         print('Jack-Jack:"that was a long school day, Im so glad to be finally home!"')
         print('Jack-Jack:"I have some things I want to do before I go to bed still."')
         print('Jack-Jack:"I need to get get my homework done before the weekend starts, so let’s do that first.”')
-        monoloog1 = True
 
 
     elif part == monoloog2:
@@ -173,6 +162,4 @@ def monoloog(part):
         if player_completed_task:
             monoloog4 == True
         
-
-
 
