@@ -20,7 +20,7 @@ monoloog2= False
 monoloog3= False
 monoloog4= False
 
-location = 'room'
+
 
 
 while True:
@@ -28,11 +28,7 @@ while True:
     if "pick" in answer or "get" in answer or "take" in answer:
           locatie, itemhw, itemlunch, itemvideogame = item_pickup(locatie, itemhw, itemlunch, itemvideogame)
           
-    elif 'go' in answer:
-        desk, mom, nightstand = change_location(desk, mom, nightstand)
-        
-    elif 'give' in answer:
-        itemhw, itemlunch, itemvideogame = give_item(itemhw, itemlunch, itemvideogame)
+
           
 
 
@@ -107,7 +103,7 @@ def monoloog(part):
         print('Jack-Jack:"that was a long school day, Im so glad to be finally home!"')
         print('Jack-Jack:"I have some things I want to do before I go to bed still."')
         print('Jack-Jack:"I need to get get my homework done before the weekend starts, so let’s do that first.”')
-            monoloog1 = True
+        monoloog1 = True
 
 
     elif part == monoloog2:
