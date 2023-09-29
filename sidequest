@@ -1,6 +1,6 @@
 if True:
-inventory=[]
-options=[]
+    inventory=[]
+    options=[]
 
 itemhw= False
 itemlunch= False
@@ -16,127 +16,126 @@ monoloogmom= False
 monoloogvideogame= False
 monoloogsleep= False
 
-answer = input(>>>)
+answer = input('>>>')
 
-def standard.commands(answer):
+def standard_commands(answer):
     if answer.lower() == "i" or answer.lower() == "inventory":
-        print("Your current inventory:')
+        print("Your current inventory:")
         if len(inventory) >= 1:
             print('-', end='')
             print('\n-'.join(inventory))
-    print('')
-  elif answer.lower() == swim:
-    print('your room is not a pool silly')
-  elif answer.lower() == 'jump':
-    print('the whole floor is shaking!')
-  elif answer.lower() == 'scream'
-    print('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGHHHHH!!')
-  elif answer.lower() == 'eat':
-    print('your mom is making dinner right now, a bit more patience')
-  return(answer)
-
-if answer == 'look':
-    if locatie == 'nightstand':
-        print("my bed and nightstand, my backpack is here as well!")
-        nightstand.look = True 
+            print('')
+            
+    elif answer.lower() == 'swim':
+        print('your room is not a pool silly')
+    elif answer.lower() == 'jump':
+        print('the whole floor is shaking!')
+    elif answer.lower() == 'scream':
+        print('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGHHHHH!!')
+    elif answer.lower() == 'eat':
+        print('your mom is making dinner right now, a bit more patience')
+    return(answer)
+    
+    if answer == 'look':
+        if locatie == 'nightstand':
+            print("my bed and nightstand, my backpack is here as well!")
+            nightstand.look = True 
         return True,  mom.look,desk.look,nightstand.look
     elif locatie == 'desk':
         print("I see my favorite videogames, PC and some secret candy stash.")
         desk.look = True
         return True,  mom.look,desk.look,nightstand.look
-    elif locatie == 'mom'
+    elif locatie == 'mom':
         print("that's my mom, I love her, let's give her my lunch like she asked us.")
         mom.look = True
         return True, mom.look,desk.look,nightstand.look
     else: 
         return True,  mom.look,desk.look,nightstand.look
 
-def item.pickup(locatie, hw, lunch, videogame):
-if locatie == nightstand and nightstand.check:
-    if not hw:
-    print("you've added 'homework' to your inventory")
-    inventory.append("homework")
-    hw = True
-
-if locatie == nightstand and nightstand.check:
-     if not lunch:
-     print("you've added 'lunch' to your inventory")
-     inventory.append("lunch")
-     lunch = True
-
-if locatie == desk and desk.check:
-    if not videogame:
-    print("you've added 'Tony Hawk's Pro Skater' to you inventory")
-    inventory.append('Tony Hawk's Pro Skater disk')
-    videogame = True
-
-return locatie, hw, lunch, videogame
+def item_pickup(locatie, hw, lunch, videogame):
+    if locatie == nightstand and nightstand.check:
+        if not hw:
+            print("you've added 'homework' to your inventory")
+            inventory.append("homework")
+            hw = True
+    
+    if locatie == nightstand and nightstand.check:
+        if not lunch:
+            print("you've added 'lunch' to your inventory")
+            inventory.append("lunch")
+            lunch = True
+            
+    if locatie == desk and desk.check:
+        if not videogame:
+            print("you've added 'Tony Hawk's Pro Skater' to you inventory")
+            inventory.append("'Tony Hawk's Pro Skater disk'")
+            videogame = True
+            return locatie, hw, lunch, videogame
 
 
 
 
 def monoloog(part):
     if part == monoloog1:
-        print(*door kreeks open*)
-        print(“Jack-Jack:’that was a long school day, Im so glad to be finally home!’”)
-        print(“Jack-Jack:’I have some things I want to do before I go to bed still.’”)
-        print(“Jack-Jack:’ I need to get get my homework done before the weekend starts, so let’s do that first.’”)
-monoloog1 = True
-
-elif part == monoloog2:
-    print(“Jack-Jack:’The teacher gave us some difficult math equesions today, let’s try our best!’)
-    print(“............”)
-    print(uhhhh)
-    print(oh this must be the answer)
-    print(“..............”)
-    print(“..............”)
-    print(hmmmmm, oke almost done just a few more)
-    print(“..............”)
-    print(“..............”)
-
-    print(got it! All done)
-
-    print(now I did everything I needed to do for school my weekend can begin!)
-    print(*knock* *knock* *knock*)
-    print(“Mom:’ Jack-Jack?’”)
-    print(“Mom:’Jack-Jack, did u eat your school lunch today?’”)
-    print(“Jack-Jack:’oh no I forgot my schoollunch!’”)
-    print(“Jack-Jack:’Im so sorry mom, I forgot.’”)
-    print(“Mom:’ It’s oke, better luck next time.’”)
-    print(“Mom: ‘Just give it to me so I can give it to the dog Instead’”)
-monoloog2 == True
-
-elif part == monoloog3:
-    print(“Jack-Jack:’here you go mom!’)
-    print(“Mom:’Thank you honey.”)
-    print(“Mom:’you know the rules, after homework you can only play an hour of videogames.”)
-    print(Jack-Jack:’Yes mom, I know.’”)
-    print(Mom:’Bye now honey.’)
-    print(*door closes*)
-    print(“Jack-Jack:’lucky for me mom doesn’t know I already did my homework so maybe I can sneak in an extra hour of video games’”)
-    print(“Jack-Jack: ‘let’s look for my *video game*’”)
-monoloog3 == True
-
-elif part == monoloog4:
-    print(*shuffle* *shuffle **shuffle*)
-    print(“..................”)
-    print(“Jack-Jack:’found it!’)
-    print(*grabs *video game*)
-    print(*inserts disk*)
-    print(*BZZZZT*)
-    print(“Jack-Jack:’let’s do this!’)
-    print(“.....................”)
-    print(“.....................”)
-    print(“Jack-Jack:’That was fun but it’s probably time for dinner now’”)
-    print("mom:'Jack-Jack! Dinner is ready!'")
-    print("Jack-Jack:'Yes mom! i'll come in a second!')
-    print(*shuffle* *shuffle **shuffle*)
-    print(“.....................”)
-    print(“.....................”)
-    print("Jack-Jack:'Oke, let's go downstairs!")
-monoloog4 == True
+        print('*door kreeks open*')
+        print('Jack-Jack:"that was a long school day, Im so glad to be finally home!"')
+        print('Jack-Jack:"I have some things I want to do before I go to bed still."')
+        print('Jack-Jack:"I need to get get my homework done before the weekend starts, so let’s do that first.”')
+        monoloog1 = True
 
 
+    elif part == monoloog2:
+        print('Jack-Jack:"The teacher gave us some difficult math equesions today, lets try our best!"')
+        print("............")
+        print('Jack-Jack:"uhhhh"')
+        print('Jack-Jack:"oh this must be the answer"')
+        print('..............')
+        print('..............')
+        print('Jack-Jack:"hmmmmm, oke almost done just a few more"')
+        print('..............')
+        print('..............')
+
+        print('Jack-Jack:"got it! All done"')
+
+        print('Jack-Jack:"now I did everything I needed to do for school my weekend can begin!"')
+        print('*knock* *knock* *knock*')
+        print('Mom:" Jack-Jack?”')
+        print('Mom:"Jack-Jack, did u eat your school lunch today?"')
+        print('Jack-Jack:"oh no I forgot my schoollunch!"')
+        print('Jack-Jack:"Im so sorry mom, I forgot.”')
+        print('Mom:" It’s oke, better luck next time.”')
+        print('Mom:"Just give it to me so I can give it to the dog Instead"')
+        monoloog2 == True
+
+    elif part == monoloog3:
+        print('Jack-Jack:"here you go mom!"')
+        print('Mom:"Thank you honey.”')
+        print('Mom:"you know the rules, after homework you can only play an hour of videogames.”')
+        print('Jack-Jack:"Yes mom, I know.”')
+        print('Mom:"Bye now honey."')
+        print('*door closes*')
+        print('Jack-Jack:"lucky for me mom doesn’t know I already did my homework so maybe I can sneak in an extra hour of video games"')
+        print('Jack-Jack:"let’s look for my *video game*"')
+        monoloog3 == True
+
+    elif part == monoloog4:
+        print('*shuffle* *shuffle **shuffle*')
+        print("..................")
+        print('Jack-Jack:"found it!"')
+        print('*grabs video game*')
+        print('*inserts disk*')
+        print('*BZZZZT*')
+        print('Jack-Jack:"let’s do this!"')
+        print('.....................')
+        print('....................')
+        print('Jack-Jack:"That was fun but it’s probably time for dinner now"')
+        print('mom:"Jack-Jack! Dinner is ready!"')
+        print('Jack-Jack:"Yes mom! I will come in a second!"')
+        print('*shuffle* *shuffle **shuffle*')
+        print('.....................')
+        print('.....................')
+        print('Jack-Jack:"Oke, lets go downstairs!"')
+        monoloog4 == True
 
    
 
