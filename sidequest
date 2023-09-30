@@ -10,6 +10,11 @@ itemvideogame = False
 homework= False
 lunch= False
 videogame= False
+desk= False
+nightstand= False
+mom= False
+
+location = [desk, nightstand, mom]
 
 looknightstand= False
 lookdesk= False
@@ -25,25 +30,24 @@ monoloog4= False
 
 while True:
     answer = input('>>>> ').lower()
-    if "pick" in answer or "get" in answer or "take" in answer:
-          locatie, itemhw, itemlunch, itemvideogame = item_pickup(locatie, itemhw, itemlunch, itemvideogame)
+    if 'grab' in answer: 
+        itemhw, itemlunch, itemvideogame
+    if 'give' in answer or 'place' in answer:
+        location, mom, desk, nightstand, itemhw, itemlunch, itemvideogame
           
 
           
 
 
-def player_completed_task(itemhw, desk, itemlunch, mom, itemvideogame):
-    if itemhw and desk == 'go':
+def player_completed_task(itemhw, itemlunch, itemvideogame):
+    global monoloog2, monoloog3, monoloog4, location, answer
+    if itemhw in inventory and location == desk and answer == 'place':
         monoloog2 = True
-    elif player_completed_task2:
-        if itemlunch and mom == 'go':
-            monoloog3 = True
-    elif player_completed_task3:
-        if itemvideogame and desk == 'go':
-            monoloog4 = True
-    return monoloog2, monoloog3, monoloog4
-
-          
+    elif itemlunch in inventory and location == mom and answer =='give':
+        monoloog3 = True
+    elif itemvideogame in inventory and location == desk and answer =='place':
+        monoloog4 = True
+    return itemhw, itemlunch, itemvideogame
 
 def standard_commands(answer):
     if answer.lower() == "i" or answer.lower() == "inventory":
@@ -61,18 +65,17 @@ def standard_commands(answer):
         print('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGHHHHH!!')
     elif answer.lower() == 'eat':
         print('your mom is making dinner right now, a bit more patience')
-    return(answer)
     
-    if answer == 'look':
+    if answer == look:
         if locatie == 'nightstand':
             print("my bed and nightstand, my backpack is here as well!")
             nightstand.look = True 
         return True,  mom.look,desk.look,nightstand.look
-    elif locatie == 'desk':
+    elif locatie == desk:
         print("I see my favorite videogames, PC and some secret candy stash.")
         desk.look = True
         return True,  mom.look,desk.look,nightstand.look
-    elif locatie == 'mom':
+    elif locatie == mom:
         print("that's my mom, I love her, let's give her my lunch like she asked us.")
         mom.look = True
         return True, mom.look,desk.look,nightstand.look
@@ -80,18 +83,21 @@ def standard_commands(answer):
         return True,  mom.look,desk.look,nightstand.look
 
 def item_pickup(item, inventory, homework, lunch, videogame):
-    if item == 'homework' and 'location' == 'nightstand':
-        inventory.append('homework')
-        homework = True
-        print('You picked up your homework')
-    if item == 'lunch' and 'location' == 'nightstand':
-        inventory.append('lunch')
-        lunch = True
-        print("You picked up your lunch")
-    if item == 'videogame' and location == 'desk':
-        inventory.append("Tony Hawk's Pro Skater")
-        videogame = True
-        print("you picked up 'Tony Hawk's Pro Skater'")
+    if item == homework and location == nightstand:
+        if not homework:
+            inventory.append('homework')
+            homework = True
+            print('You picked up your homework')
+    if item == lunch and location == nightstand:
+        if not lunch:
+            inventory.append('lunch')
+            lunch = True
+            print("You picked up your lunch")
+    if item == videogame and location == desk:
+        if not videogame:
+            inventory.append("Tony Hawk's Pro Skater")
+            videogame = True
+            print("'you picked up 'Tony Hawk's Pro Skater'")
     else:
         print("You can't pick up that item here.")
     return location, hw, lunch, videogame
@@ -161,4 +167,3 @@ def monoloog(part):
         print('Jack-Jack:"Oke, lets go downstairs!"')
         if player_completed_task:
             monoloog4 = True
-        
