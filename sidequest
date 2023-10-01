@@ -1,27 +1,34 @@
 inventory = []
-itemhw = False
-itemlunch = False
-itemvideogame = False
+
 homework = False
 lunch = False
 videogame = False
 desk = False
-nightstand = False
+backpack = False
 mom = False
-location = [desk, nightstand, mom]
-looknightstand = False
-lookdesk = False
-lookbackpack = False
+locationlist = ['room', 'desk', 'backpack', 'mom']
+
 monoloog1 = False
 monoloog2 = False
 monoloog3 = False
 monoloog4 = False
 
+location = locationlist[0]
+
+def helpen():
+    print("Instructions to the player:")
+    print("if you want to go to an area, just type 'go [...]'")
+    print("if you want to pick up a item type 'grab [...]'")
+    print("if you want to give or place something\n type place [...] or type give [...]")
+    print("if you want to see where you are, or just look around\n where you are currently, type 'look'\n")
+    print("if you want to see your inventory htype 'i'")
+    print("if you want to see this menu again, type 'help' or 'h'")
+
 
 def player_completed_task(homework, lunch, videogame, location, answer):
-    global monoloog2, monoloog3
+    global monoloog2, monoloog3, monoloog4
 
-    if homework in inventory and location == 'desk' and answer == 'place':
+    if 'homework' in inventory and location == 'desk' and 'place' in answer:
         monoloog2= print('Jack-Jack:"The teacher gave us some difficult math equesions today, lets try our best!"')
         print("............")
         print('Jack-Jack:"uhhhh"')
@@ -40,9 +47,11 @@ def player_completed_task(homework, lunch, videogame, location, answer):
         print('Jack-Jack:"Im so sorry mom, I forgot.”')
         print('Mom:" It’s oke, better luck next time.”')
         print('Mom:"Just give it to me so I can give it to the dog Instead"')
+        print('("mom" is now also a location you can go to)')
+        inventory.remove('homework')
         monoloog2 = True
 
-    if lunch in inventory and location == 'mom' and answer == 'give':
+    elif 'lunch' in inventory and location == 'mom' and 'give' in answer:
         monoloog3= print('Jack-Jack:"here you go mom!"')
         print('Mom:"Thank you honey.”')
         print('Mom:"you know the rules, after homework you can only play an hour of videogames.”')
@@ -51,9 +60,10 @@ def player_completed_task(homework, lunch, videogame, location, answer):
         print('*door closes*')
         print('Jack-Jack:"lucky for me mom doesn’t know I already did my homework so maybe I can sneak in an extra hour of video games"')
         print('Jack-Jack:"let’s look for my *video game*"')
+        inventory.remove('lunch')
         monoloog3 = True
 
-    if videogame in inventory and location == 'desk' and answer == 'place':
+    elif 'videogame' in inventory and location == 'desk' and 'place' in answer:
         monoloog4= print('*shuffle* *shuffle * *shuffle*')
         print("..................")
         print('Jack-Jack:"found it!"')
@@ -70,7 +80,10 @@ def player_completed_task(homework, lunch, videogame, location, answer):
         print('.....................')
         print('.....................')
         print('Jack-Jack:"Oke, lets go downstairs!"')
+        print('THE END')
         monoloog4 = True
+
+    return homework, lunch, videogame, location, answer
 
 def standard_commands(answer):
     if answer.lower() == "i" or answer.lower() == "inventory":
@@ -79,6 +92,8 @@ def standard_commands(answer):
             print('-', end='')
             print('\n-'.join(inventory))
             print('')
+    elif answer.lower() == 'h' or 'help':
+        helpen()
     elif answer.lower() == 'swim':
         print('your room is not a pool silly')
     elif answer.lower() == 'jump':
@@ -87,48 +102,71 @@ def standard_commands(answer):
         print('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGHHHHH!!')
     elif answer.lower() == 'eat':
         print('your mom is making dinner right now, a bit more patience')
-    if answer.lower() == 'look':
-        if location == 'nightstand':
-            print("my bed and nightstand, my backpack is here as well!")
-        elif location == 'desk':
-            print("I see my favorite videogames, PC and some secret candy stash.")
 
-        elif location == 'mom':
-            print("that's my mom, I love her, let's give her my lunch like she asked us.")
     else:
         print("Invalid command")
 
-def item_pickup(item):
-    if item == 'homework' and location == 'nightstand':
+def item_pickup(homework, lunch, videogame):
+    if 'homework' and location == 'backpack' and 'work' in answer:
         if not homework:
             inventory.append('homework')
-            hw = True
+            homework = True
             print('You picked up your homework')
-    elif item == 'lunch' and location == 'nightstand':
-        if not itemlunch:
+    elif 'lunch' and location == 'backpack' and 'lunch' in answer:
+        if not lunch:
             inventory.append('lunch')
             lunch = True
             print("You picked up your lunch")
-    elif item == 'videogame' and location == 'desk':
-        if not item.videogame:
+    elif 'videogame' and location == 'desk':
+        if not videogame:
             inventory.append("Tony Hawk's Pro Skater")
             videogame = True
             print("You picked up 'Tony Hawk's Pro Skater'")
-    else:
-        print("You can't pick up that item here.")
-    return item
 
-monoloog1= print('*door kreeks open*')
+
+    else:
+        print("I don't seem to understand that")
+
+    return homework, lunch, videogame
+
+
+
+print('*door kreeks open*')
 print('Jack-Jack:"that was a long school day, Im so glad to be finally home!"')
 print('Jack-Jack:"I have some things I want to do before I go to bed still."')
-print('Jack-Jack:"I need to get get my homework done before the weekend starts, so let’s do that first.”')
-monoloog = True
+print('Jack-Jack:"I need to get get my homework done before the weekend starts, so let’s do that first.”\n')
+print('You have the following locations you can go to: "desk" and "backpack"\n')
+print('Type "h" or "help" for instructions\n')
 
 
 while True:
     answer = input('>>>> ').lower()
     if 'grab' in answer:
-        var = homework, lunch, videogame
-    if 'give' in answer or 'place' in answer:
-        var = location, mom, desk, nightstand, homework, lunch, videogame
+        homework, lunch, videogame = item_pickup(homework, lunch, videogame)
+    elif 'give' in answer or 'place' in answer:
+        homework, lunch, videogame, location, answer = player_completed_task(homework, lunch, videogame, location, answer)
+    elif 'go' in answer:
+        if 'desk' in answer:
+            location = locationlist[1]
+        elif 'backpack' in answer:
+            location = locationlist[2]
+        elif 'mom' in answer:
+            location = locationlist[3]
+        elif 'room' in answer:
+            location = locationlist[0]
+    elif 'look' in answer:
+        print("this is your room, you can go to your desk or backpack")
+        if 'backpack' in answer:
+            print("This my backpack, my school stuff is still in there")
+        elif 'desk' in answer:
+            print("I see my favorite videogames, PC and some secret candy stash. I could make my homework here")
+        elif 'mom' in answer:
+            print("that's my mom, I love her, let's give her my lunch like she asked us.")
+
+    else:
+        standard_commands(answer)
+    print(location)
+
+
+
 
